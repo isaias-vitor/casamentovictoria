@@ -1,0 +1,92 @@
+body{
+   font-family: 'Dongle' !important;
+   color: #94b9ff !important;
+   background-color: #F0F4FF !important;
+}
+
+th{
+   background-color: #F0F4FF !important;
+   color: #94b9ff !important;
+}
+
+.font-rounded{
+   font-family: 'Dongle';
+   color: #94b9ff !important;
+}
+.titulo{
+   font-family: 'Imperial Script';
+   font-size: 2em;
+}
+.destaque{
+   color: #6FAFFF;
+}
+
+#confirmacao, #maps{
+   border-color: #94b9ff !important;
+   color: #94b9ff !important;
+}
+
+#confirmacao:active, #confirmacao:focus {
+    background-color: #94b9ff !important; 
+    border-color: #94b9ff !important;     
+    color: white !important;             
+}
+
+#apresentacao h1{
+   font-size: 5em;
+   font-family: 'Lovers Quarrel';
+   color: #94b9ff;
+}
+
+#contagem-regressiva span{
+   font-size: 3em !important;
+   vertical-align: middle;
+}
+
+#truco{
+   vertical-align: middle;
+}
+
+
+
+#cards-eventos i{
+   font-size: 3.5em;
+}
+
+#eventos{
+   background-color: #E0E9FF;
+}
+
+#presentes h4 {
+   height: 2.5em;
+}
+
+#presentes #geral h4 {
+   height: 1em;
+}
+
+#geral p{
+   height: 7.5em;
+}
+
+.card p{
+   color: rgb(59, 59, 59) !important;
+}
+.nav-link{
+   color: #555D70 !important;
+}
+.nav-item .active{
+   color: #FFFFFF !important;
+   background-color: #6FAFFF !important;
+}
+
+#buttons-menu i{
+   color: #94b9ff; 
+}
+
+#modalLocalizacao .modal-title{ 
+   font-size: 2em !important;
+}
+#modalLocalizacao .modal-body{ 
+   font-size: 1.5em !important;
+}

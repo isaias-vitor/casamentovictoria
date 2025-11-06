@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Imperial+Script&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="menu" class="container py-2 bg-white d-flex justify-content-between">
+      <img src="../static/img/logo.png" height="55" alt="">
+      <div id="buttons-menu" class="d-flex py-2 justify-content-between">
+        <a href="#presentes" class="nav-link">
+          <i class="bxr bx-gift me-1 btn d-flex align-items-center p-2 rounded-circle" style="font-size: 1.4em;"></i>
+        </a>
+        <i class="bxr bx-location me-1 btn d-flex align-items-center p-2 rounded-circle" data-bs-toggle="modal" data-bs-target="#modalLocalizacao" style="font-size: 1.4em;"></i>
+      </div>
+    </nav>
+
+    <div class="d-flex justify-content-center mb-5" id="apresentacao">
+      <div class="container justify-content-center align-items-center">
+        <h1 class="row justify-content-center mb-0 mt-5">Victória e Davi</h1>
+        <div class="row justify-content-center">
+          <a href="https://wa.me/5538984258184?text=Gostaria de confirmar a minha presença no casamento de Victória e Davi!" class="btn btn-outline-primary p-0  fs-3 col-6 d-flex justify-content-center align-items-center rounded-pill btn-lg mt-3" id="confirmacao">CONFIRMAR PRESENÇA</a>
+        </div>
+        <!-- <h4 class="row justify-content-center mt-0">17 | Janeiro | 2026</h4> -->
+      </div>
+    </div>
+
+    <div id="contagem-regressiva" class="container col-12 justify-content-center mt-5">
+      <div class="col-12" id="titulo-contagem">
+        <h2 class="text-center titulo">Contagem Regressiva</h2>
+      </div>
+      <div class="col-12 text-center d-flex justify-content-center mt-2" id="cronometro">
+        <div class="text-center col-2 mx-1 mt-2">
+          <span class="border border-4 d-flex justify-content-center align-items-center px-2 rounded-3"><strong id="dias"></strong></span>
+          <p class="mt-1">Dias</p>
+        </div>
+        <div class="text-center col-2 mx-1 mt-2">
+          <span class="border border-4 d-flex justify-content-center align-items-center px-2 rounded-3"><strong id="horas">20</strong></span>
+          <p class="mt-1">Horas</p>
+        </div>
+        <div class="text-center col-2 mx-1 mt-2">
+          <span class="border border-4 d-flex justify-content-center align-items-center px-2 rounded-3"><strong id="minutos">32</strong></span>
+          <p class="mt-1">Minutos</p>
+        </div>
+        <div class="text-center col-2 mx-1 mt-2">
+          <span class="border border-4 d-flex justify-content-center align-items-center px-2 rounded-3"><strong id="segundos">08</strong></span>
+          <p class="mt-1">Segundos</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="eventos" class="container py-3 col-12 justify-content-center mt-2">
+      <div class="col-12" id="titulo-eventos">
+        <h2 class="text-center mb-4 titulo">Eventos</h2>
+      </div>
+      <div id="cards-eventos" class="row justify-content-between">
+        <div id="cerimonia" class="container col-4 text-center">
+          <i class='bx bx-heart me-1'></i>
+          <h4 class="mb-2 lh-sm"><strong>CERIMÔNIA</strong></h4>
+          <p class="font-rounded destaque mb-2 lh-sm"><strong>Sábado | 16:00</strong></p>
+          <p class="font-rounded lh-sm">Diante de Deus, uniremos nossas vidas em amor e fé, pedindo Sua bênção sobre nosso lar.</p>
+        </div>
+        <div id="festa" class="container col-4 text-center">
+          <i class='bx bx-party me-1'></i>
+          <h4 class="mb-2 lh-sm"><strong>FESTA</strong></h4>
+          <p class="font-rounded destaque mb-2 lh-sm"><strong>Sábado | 18:00</strong></p>
+          <p class="font-rounded lh-sm">Após a cerimônia, celebraremos com alegria e gratidão ao Senhor por este dia especial.</p>
+        </div>
+        <div id="festa" class="container col-4 text-center">
+          <i class='bx bx-music-alt me-1'></i>
+          <h4 class="mb-2 lh-sm"><strong>TOCATA</strong></h4>
+          <p class="font-rounded destaque lh-sm mb-2"><strong>Sábado | 20:00</strong></p>
+          <p class="font-rounded lh-sm">Um momento de louvor e comunhão! Traga seu instrumento e/ou violão e venha cantar hinos conosco em gratidão a Deus.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="presentes" data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="80" tabindex="0" class="container col-12 justify-content-center mt-2">
+      <div class="col-12" id="titulo-presentes">
+        <h2 class="text-center mb-2 titulo">Presentes</h2>
+      </div>
+      <div class="justify-content-center font-rounded">
+        <p class="text-center m-0"> Sua presença já é o maior presente que poderíamos receber.</p>
+        <p class="text-center m-0 lh-1"> Mas, se desejar nos presentear, preparamos com carinho uma lista com itens que farão parte do nosso novo lar. </p>
+        <p class="text-center m-0"> Agradecemos de coração por cada gesto de amor! </p>
+      </div>
+
+      <ul class="nav nav-pills active nav-fill mb-2 mt-3">
+        <li class="nav-item">
+          <button class="nav-link p-0 rounded-pill active" id="quarto-tab" data-bs-toggle="tab" data-bs-target="#quarto" type="button" role="tab" aria-controls="quarto" aria-selected="true">
+            Quarto
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link p-0 rounded-pill" id="banheiro-tab" data-bs-toggle="tab" data-bs-target="#banheiro" type="button" role="tab" aria-controls="banheiro" aria-selected="true">
+            Banheiro
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link p-0 rounded-pill" id="sala-tab" data-bs-toggle="tab" data-bs-target="#sala" type="button" role="tab" aria-controls="sala" aria-selected="true">
+            Sala
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link p-0 rounded-pill" id="cozinha-tab" data-bs-toggle="tab" data-bs-target="#cozinha" type="button" role="tab" aria-controls="cozinha" aria-selected="true">
+            Cozinha
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link p-0 rounded-pill" id="area_servico-tab" data-bs-toggle="tab" data-bs-target="#area_servico" type="button" role="tab" aria-controls="area_servico" aria-selected="true">
+            Área de Serviço
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link p-0 rounded-pill" id="geral-tab" data-bs-toggle="tab" data-bs-target="#geral" type="button" role="tab" aria-controls="geral" aria-selected="true">
+            Geral
+          </button>
+        </li>
+      </ul>
+
+      <div id="cards-presentes" class=" py-4 ">
+        <div class="tab-content mt-3" id="myTabContent">
+          <div class="tab-pane fade show active" id="quarto" role="tabpanel" aria-labelledby="quarto-tab">
+            <div class="row g-2 justify-content-between">
+              <div class="col-6 pe-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS1_dHQA7KRyGg43y2oSA_O1Pu4W1K6cIiIpi2arUJlYT-BTJAJmMxRMkzBuJAiqJlztIcRFredJLEdJUT1lnCW6DcYZqrgQNPXkgLWT27bXtqL630E_cjVnAULLR6y&usqp=CAc"
+                      class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Guarda-roupas Casal</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Guarda-roupas%20Casal*!"
+                        class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://lojaalabama.cdn.magazord.com.br/img/2023/02/produto/2583/imagen-travesseiro-2.png?ims=fit-in/800x800/filters:fill(white)"
+                      class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Travesseiros</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Travesseiros*!"
+                        class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://io.convertiez.com.br/m/essencialenxovais/shop/products/images/31066/medium/cobertor-casal-queen-canada-fendi_64801.jpg"
+                      class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cobertor Casal</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cobertor Casal*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://www.vicemar.com.br/image/cache/data/eftr/Img_ftr_rp_894001-1160x1160.JPG?version=20250221144629"
+                      class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cobertor Solteiro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cobertor Solteiro*!"
+                        class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/615256/edredom_king_quality_estampado_dupla_face_100_algodao_fio_penteado_1_peca_azul_geometrico_6567_1_20190420113219.jpg"
+                      class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Edredom Casal</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Edredom Casal*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://cdn.sistemawbuy.com.br/arquivos/dc7db93e78bf0dd8806d89ead6f85ac6/produtos/65ca66e9c3e01/edredom-solteiro-dupla-face-220m-x-150m-microfibra-conforto-preto-62580d4ab2b95-large-65ca66eba6cb1.jpg"
+                      class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Edredom Solteiro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Edredom Solteiro*!"
+                        class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://magazord-public.s3.amazonaws.com/appelhome/img/2025/03/produto/6446/6.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Colcha Casal</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Colcha Casal*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://images.yampi.me/assets/stores/lindacasa/uploads/images/kit-cobre-leito-colcha-solteiro-2-pecas-matelado-dupla-face-dots-300-fios-com-porta-travesseiro-azul-marinho-660d55f5d4b62-large.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Colcha Solteiro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Colcha Solteiro*!"
+                        class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/889055/cesto_de_roupa_suja_em_bambu_72_litros_com_tampa_organizador_banheiro_e_lavanderia_premium_1483_1_e02b350441e7a32709b896b7b9af074c.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cesto de Roupas</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cesto de Roupas*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlW0FJLpyAiOLYDQpuwdvaB0x-ap66og-uTdoaSEg8q_8Z_fNb-cpwHO_jk_HrijSkzN0&usqp=CAU" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cabides</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cabides*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://cdn.leroymerlin.com.br/products/kit_de_varao_aluminio_2,00m_cromado_28mm_inspire_89684630_0001_600x600.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cortina com Varão (2ms)</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cortina com Varão (2ms)*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://http2.mlstatic.com/D_Q_NP_774457-MLU78631394414_092024-O.webp" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Lençol com Elástico Casal</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Lençol com Elástico Casal*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://images.yampi.me/assets/stores/babyenxoval/uploads/images/lencol-solteiro-com-elastico-e-fronha-malha-verde-salvia-6452b68669c6b-medium.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Lençol com Elástico Solteiro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Lençol com Elástico Solteiro*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Quarto</span>
+                  <img src="https://i.zst.com.br/thumbs/45/e/33/-411333420.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Ventilador</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*JogVentilador*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="banheiro" role="tabpanel" aria-labelledby="banheiro-tab">
+            <div class="row g-2 justify-content-between">
+              <div class="col-6 pe-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Banheiro</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/775325/jogo_toalhas_banho_5_pecas_essence_450g_m_100_algodao_679_1_dceaa25eb4f8e7549159d6eea7665e31.jpg"
+                      class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Toalhas</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Toalhas*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Banheiro</span>
+                  <img src="https://cdn.leroymerlin.com.br/products/jogo_tapetes_para_banheiro_elegant_texture_crochet__unico_1570596502_e88c_600x600.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Tapete - Banheiro	</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Tapete - Banheiro	*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Banheiro</span>
+                  <img src="https://bluegardenia.vtexassets.com/arquivos/ids/1182748/2-000029310.jpg?v=638866100956100000" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Roupão Feminino	</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Roupão Feminino*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Banheiro</span>
+                  <img src="https://casanovatoalhas.cdn.magazord.com.br/img/2025/04/produto/2260/11-roupao-de-banho-adulto-masculino-pollo-appel.jpeg?ims=fit-in/800x" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Roupão Masculino</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Roupão Masculino*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="sala" role="tabpanel" aria-labelledby="sala-tab">
+            <div class="row g-2 justify-content-between">
+              <div class="col-6 pe-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://sonoshowmoveis.vtexassets.com/arquivos/ids/176146-570-570?v=638950107387070000&width=570&height=570&aspect=true" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Sofá de Canto</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Sofá de Canto*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://m.media-amazon.com/images/I/81ur9KHE9CL._AC_UF894,1000_QL80_.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Mesa de Centro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Mesa de Centro*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://cdn.leroymerlin.com.br/products/kit_de_varao_aluminio_2,00m_cromado_28mm_inspire_89684630_0001_600x600.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cortina com Varão (2ms)	</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cortina com Varão (2ms)*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/1140986/kit_6_cadeiras_reforcada_para_mesa_de_jantar_luxo_linho_133_1_54e2baa27dbc9645e16721f7b3583b21.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cadeiras</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cadeiras*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/763017/tapete_para_sala_egipicio_luxor_100x150_lines_162653_1_8ec717763efcaa1b58a151876369f280.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Tapete</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Tapete para Sala*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://lojatoquedecasa.com.br/cdn/shop/files/lustre-para-sala-excecutive-golden-evolut-toque-de-casa-3_800x.webp?v=1742145641" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Luminária</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Luminária*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://m.media-amazon.com/images/I/71vALPRDcPS._AC_UF894,1000_QL80_.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Manta para Sofá</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Manta para Sofá*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNBDuCR-UNCAdewEHO12__U8K1InhiELx7rw&s" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Objetos Decorativos</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Objetos Decorativos*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://cdn.iset.io/assets/71966/produtos/13824/quadro-decorativo-abstrato-com-folhagens-conjunto-elegante-em-3-pecas-02.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Quadro(s) Decorativo(s)</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Quadro(s) Decorativo(s)*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/1178218/espelho_redondo_maior_aqua_couro_marrom_2363_2_472a52ca239718e0d3661a40f06d0560.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Espelho</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Espelho*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Sala</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/1118556/capa_de_almofada_milano_em_couro_ecologico_marrom_45x45_1753_2_c0e29866c25a0eedff03c1e59c023d3f.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Almofadas para Sofá</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Almofadas para Sofá*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="cozinha" role="tabpanel" aria-labelledby="cozinha-tab">
+            <div class="row g-2 justify-content-between">
+              <div class="col-6 pe-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://73035.cdn.simplo7.net/static/73035/sku/11190119844.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Panela de Pressão (4l)</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Panela de Pressão (4l)*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://assets-casavitoria.egondola.app/v1/pro_38408_e.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Panelas</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Panelas*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://io.convertiez.com.br/m/lojasedmil/shop/products/images/909/large/jogo-de-facas-inox-tramontina-9-pecas_4018.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Facas</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Facas*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://lojasimperio-s3.s3.amazonaws.com/92cfcced-f179-4f39-8972-92ef3f6776ce.webp" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Armário</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Armário*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://www.galaxcommerce.com.br/sistema/upload/3200/produtos/botijAo-de-gAs-13kg-residencial_2021-12-28_16-54-10_0_377.png" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Botijão de Gás</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Botijão de Gás*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://cdnv2.moovin.com.br/rumocerto/imagens/produtos/det/kit-6-assadeirasformas-antiaderente-multiflon-fbd4a23d56bdba9249f75b48aa230616.png" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Formas/Assadeiras</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Formas-Assadeiras*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://www.mulheresdefibra.eco.br/wp-content/uploads/2021/07/kit-descanso-3-pecas.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Descanso de Panela</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Descanso de Panela*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/977231/porta_condimentos_giratorio_preto_em_vidro_3206_1_42eac1c157b43897f1bcf89a7fda915d.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Porta Codimentos</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Porta Codimentos*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://dular.vteximg.com.br/arquivos/ids/5578225-1000-1000/image-cf685d4a4b614f6bb7d2b6ff216d50be.jpg?v=638100519023770000" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Expremedor Elétrico	</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Expremedor Elétrico*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://medlimp.com.br/wp-content/uploads/2023/01/GARRAFA-TERMICA-INOX-1L-PRESSAO-TERMOLAR-2.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Garrafa Térmica (Café)</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Garrafa Térmica (Café)*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://lojatoquedecasa.com.br/cdn/shop/files/escorredor-de-louca-em-metal-premium-toque-de-casa-4_1001x.webp?v=1721490333v" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Escorredor de Louças</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Escorredor de Louças*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://ocapi.nadir.com.br/on/demandware.static/-/Sites-nadir-main-catalog/default/dw2152e8ec/nadir/zoom/58310201001401_a_1000px.webp" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Pratos Fundos</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Pratos Fundos*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://www.eladecora.com.br/cdn/shop/files/jogo-de-xicaras-e-pires-para-cafe-porcelana-branco-e-dourado-90ml-linha-egg-6-pecas-9297206.png?v=1751289114" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Conjunto de Xícaras</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Conjunto de Xícaras*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://www.buttonshop.com.br/content/images/thumbs/0005757_jogo-de-tacas-para-vinho-branco-anna-350ml-6-pecas-bohemia-fcmpo_600.jpeg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Conjunto de Taças</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Conjunto de Taças*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://gazin-images.gazin.com.br/mT3j_tuerTe-ep1AWCL3y8GnrTQ=/1920x/filters:format(webp):quality(75)/https://gazin-marketplace.s3.amazonaws.com/midias/imagens/2024/05/conjunto-de-copos-de-vidro-350ml-6-pecas-vitrage-nadir-182405161312.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Conjunto de Copos</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Conjunto de Copos*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://lojamor.vtexassets.com/arquivos/ids/158787/003357-Tabua-Corte-Bamboo-50xmx30cm-1.jpg?v=636361366580470000" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Tábua de Corte</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Tábua de Corte*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://m.media-amazon.com/images/I/819ZsCNaC3L.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Potes Multiuso</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Potes Multiuso*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://m.media-amazon.com/images/I/51pGZUHhakL.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jarra</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jarra*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://gazin-images.gazin.com.br/XtnTAFWlSThLH--uNgQE6wBVUhc=/1920x/filters:format(webp):quality(75)/https://gazin-marketplace.s3.amazonaws.com/midias/imagens/2024/12/batedeira-planetaria-britania-power-plus-12-velocidades-700w-45l-bbp760-152412300441.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Batedeira Elétrica</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Batedeira Elétrica*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://d296pbmv9m7g8v.cloudfront.net/Custom/Content/Products/10/70/1070409_forno-eletrico-philco-pfe52p-dupla-resistencia-50l-com-bandeja-coletora-de-residuos-timer-60-minutos-10010326_m40_638931829309555691.webp" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Forno Elétrico</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Forno Elétrico*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://cdn.leroymerlin.com.br/products/kit_para_pia_lixeira_com_tampa_4,7_litros__porta_detergente_r_1570679876_6496_600x600.png" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Conjunto Limpeza de Pia</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Conjunto Limpeza de Pia*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://io.convertiez.com.br/m/lojasedmil/shop/products/images/1643/medium/micro-ondas-philco-pmo28s-25-litros-prata_13273.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Microondas</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Microondas*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://portobrasil.vtexassets.com/arquivos/ids/180505/61091R---APARELHO-DE-JANTAR-42-PECAS-ROMA-BRANCO---02.jpg?v=638942263635530000" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Aparelho de Jantar</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Aparelho de Jantar*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://archives.lojasnossolar.com.br/images/nossolar/produtos/17934/984291_243706_P1000.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Conjunto de Sobremesa</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Conjunto de Sobremesa*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://m.media-amazon.com/images/I/61AidIZh7HL.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Açucareiro e Saleiro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Açucareiro e Saleiro*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/456520/saleiro_e_paliteiro_com_porata_guardanapos_brinox_5929_1_4c0a011a326d713e4aba150f039ab7d7.png" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Porta-guardanapo e Paliteiro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Porta-guardanapo e Paliteiro*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://imgs.extra.com.br/1536391479/1xg.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Concha, Pegador e Excumadeira</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Concha, Pegador de Macarrão e Excumadeira*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://imgs.casasbahia.com.br/1534244386/1xg.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Leitera</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Leitera	*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-ltolxv1ikvu138" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Mantimentos</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Mantimentos*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://d296pbmv9m7g8v.cloudfront.net/Custom/Content/Products/10/29/1029937_conjunto-travessa-forma-retangular-vidro-sem-tampa-3-pecas-10005963_z33_638428256336779805.webp" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Travessa(s) de Vidro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Travessa(s) de Vidro*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://carrefourbr.vtexassets.com/arquivos/ids/155968671/8fe6bba8679445afab5f3e7df32038bd.jpg?v=638533689511800000" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Conchas de Silicone</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Conchas de Silicone*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://cdn.awsli.com.br/2500x2500/948/948882/produto/35841025/eed1d6e480.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Bandeja</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Bandeja*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lo37nf4oou9z08" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Bacias</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Bacias*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://sipolatti.vtexassets.com/arquivos/ids/191090/Bebedouro-NewUp-Evidence-Garrafao-agua-gelada-compressor.jpg?v=637823665743470000" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Bebedouro</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Bebedouro*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/1292607/escorredor_de_massas_em_inox_com_alca_24_cm_baccani_2235_1_76d6da86313fe0dbebe9db2d1319b0f8.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Escorredor de Massas</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Escorredor de Massas*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://shopcama.vteximg.com.br/arquivos/ids/400919-1000-1000/Toalha-de-Mesa-de-Renda-Retangular-6-Lugares-1_30-x-1_80-Mts-Gardenia-Branca.jpg?v=638551213522030000" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Toalhas de Mesa (Retangular)</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Toalhas de Mesa (Retangular)*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/361962/bule_para_cafe_esmaltado_vermelho_1_5_l_ewel_9065_1_c8077a57f5e3dce5edef329ac3db3602.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Bule</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Bule*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://down-br.img.susercontent.com/file/sg-11134201-22110-9y3tsttbthjva9" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cortina com Varão (2ms)</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cortina com Varão (2ms)*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://images.tcdn.com.br/img/img_prod/1200797/jogo_de_talheres_silver_16_pecas_33138_1_a727a1e4dc29f04b3d50b8334521a701.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Jogo de Talheres</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Jogo de Talheres*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Cozinha</span>
+                  <img src="https://gazin-images.gazin.com.br/qhmM3uXLmEAbREKQuaXqIZ5Sp5k=/1920x/filters:format(webp):quality(75)/https://gazin-marketplace.s3.amazonaws.com/midias/imagens/2024/02/chaleira-eletrica-mondial-pratic-2l-aco-inox-desligamento-automatico-ce-06-102402310628.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Chaleira Elétrica</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Chaleira Elétrica*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="area_servico" role="tabpanel" aria-labelledby="area_servico-tab">
+            <div class="row g-2 justify-content-between">
+              <div class="col-6 pe-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Serviço</span>
+                  <img src="https://d296pbmv9m7g8v.cloudfront.net/Custom/Content/Products/10/41/1041209_tabua-de-passar-roupas-benoa-com-ajuste-de-altura-10005789_z16_638574100726182829.webp" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Tábua de Passar Roupa</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Tábua de Passar Roupa*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Serviços</span>
+                  <img src="https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/l/a/lavadora-de-roupas-11kg-electrolux-les11_791648_2.webp" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Lavadoura de Roupas | Tanquinho</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Lavadoura de Roupas | Tanquinho*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 pe-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Seviços</span>
+                  <img src="https://gazin-images.gazin.com.br/Hb2vypVJR9uRu_jRmruo6CbU2ak=/1920x/filters:format(webp):quality(75)/https://gazin-marketplace.s3.amazonaws.com/midias/imagens/2024/07/ferro-de-passar-a-vapor-e-a-seco-salva-botoes-electrolux-efficient-esi10-182407060525.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Ferro de Passar Roupa	</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Ferro de Passar Roupa*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Serviço</span>
+                  <img src="https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/a/s/aspirador-de-po-e-agua-electrolux-11-litros-smart-1400w-a10n1_940375_1.webp" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Aspirador de Pó</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Aspirador de Pó*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Serviço</span>
+                  <img src="https://mariadovaral.com/wp-content/uploads/2019/01/MDR-Mercado-Livre-6.png" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Varal</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Varal*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Serviço</span>
+                  <img src="https://cdn.leroymerlin.com.br/products/armario_multiuso_organizador_lavanderia_branco_tuty_mdf_1571137157_edf4_600x600.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Armário Multiuso</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Armário Multiuso*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Serviço</span>
+                  <img src="https://alecrimvariedades.cdn.magazord.com.br/img/2024/09/produto/6634/7908122201950-4.jpg?ims=600x600" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Cesto</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Cesto para Lavenderia*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Serviço</span>
+                  <img src="https://m.media-amazon.com/images/I/51uBTylCrWL._SX466_.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Lixeira</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Lixeira para Área Externa*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 ps-1 mt-3">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Área de Serviço</span>
+                  <img src="https://img.irroba.com.br/fit-in/600x600/filters:fill(fff):quality(80)/hidrauli/catalog/api/hidrauli_citelirr/5f4112f544386.jpg" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Escada de Alumínio</h4>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20*Escada de Aluminio*!" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="geral" role="tabpanel" aria-labelledby="geral-tab">
+            <div class="row g-2 justify-content-between">
+              <div class="col-6 pe-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Geral</span>
+                  <img src="../static/img/qrcode.png" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Contribuição via Pix</h4>
+
+                    <p class="font-rounded text-center lh-1">Se desejar nos presentear de uma forma prática, você pode contribuir pelo Pix. Mais do que o valor, o que realmente importa é o carinho e o amor com que compartilhamos este momento tão especial.</p>
+
+                    <div class="row justify-content-center">
+                      <button onclick="navigator.clipboard.writeText('presentevictoriaedavi@gmail.com')" class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Copiar Chave</button>
+                    </div>
+                  </div>
+                </div>
+              </div>      
+              <div class="col-6 ps-1">
+                <div class="card border-0 shadow-sm py-2 px-1 col-12">
+                  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-info">Geral</span>
+                  <img src="https://i.pinimg.com/originals/6f/c9/91/6fc9913bed160a8d641ac620be59df78.png" class="card-img-top rounded" >
+                  <div class="card-body pb-1">
+                    <h4 class="card-title lh-1 text-center">Outro</h4>
+                    <p  class="font-rounded text-center lh-1">Se desejar nos presentear de outra forma, fique à vontade. Cada gesto de carinho é uma bênção que Deus nos concede por meio de pessoas queridas como você.</p>
+                    <div class="row justify-content-center">
+                      <a href="https://wa.me/5538984258184?text=Gostaria%20de%20presentear%20Vict%C3%B3ria%20e%20Davi%20com%20 " class="btn btn-outline-info btn-sm fs-4 col-auto py-0 px-4 m-0">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>  
+
+    <div id="modalLocalizacao" class="modal fade" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Localização</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>O casamento será realizado no Espaço Vrum, localizado na zona rural de Coração de Jesus - MG</p>
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.5289452139587!2d-44.4016535!3d-16.650394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaad544b694ad37%3A0xed07c0e8f22dcdc!2sEspa%C3%A7o%20Vrum!5e0!3m2!1spt-BR!2sbr!4v1762414353491!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="https://maps.app.goo.gl/FuHwZg2cdHidiTn58">
+              <button type="button" id="maps" class="btn btn-outline-info">Google Maps</button>
+            </a>
+            <a href="https://www.waze.com/en/live-map/directions/br/mg/espaco-vrum?place=ChIJN62UtkTVqgAR3Nwijw580A4">
+              <button type="button" id="waze" class="btn btn-outline-info">Waze</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Define a data alvo
+      const targetDate = new Date("2026-01-17T16:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        const format = num => String(num).padStart(2, "0");
+
+        document.getElementById('dias').innerText = format(days);
+        document.getElementById('horas').innerText = format(hours);
+        document.getElementById('minutos').innerText = format(minutes);
+        document.getElementById('segundos').innerText = format(seconds);
+      }
+
+      // Atualiza a cada segundo
+      const interval = setInterval(updateCountdown, 1000);
+
+      // Atualiza imediatamente
+      updateCountdown();
+    </script>   
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
